@@ -1,9 +1,9 @@
 import pandas as pd
-from matplotlib import pyplot as plt
 from sklearn import tree
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
+import matplotlib.pyplot as plt
 
 from connection.Firebase import *
 
@@ -38,6 +38,10 @@ def init():
                    filled=True)
 
     fig.savefig('imagename.png')
+
+    plt.figure(figsize=(12, 12))  # set plot size (denoted in inches)
+    tree.plot_tree(clf, fontsize=10)
+    plt.show()
 
 
 if __name__ == '__main__':
