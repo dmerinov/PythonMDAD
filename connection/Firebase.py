@@ -4,7 +4,11 @@ from firebase_admin import firestore
 
 
 def connect():
-    credential = credentials.Certificate("C:\\Users\\wotan\\Desktop\\PythonMDAD\\connection\\firestoreKey.json")
+    # Torre
+    # credential = credentials.Certificate("C:\\Users\\wotan\\Desktop\\PythonMDAD\\connection\\firestoreKey.json")
+    # Portatil
+    credential = credentials.Certificate("C:\\Users\\dmerinov-lt\\Documents\\PythonMDAD\\connection\\firestoreKey.json")
+
     firebase_admin.initialize_app(credential)
 
     db = firestore.client()
@@ -16,6 +20,6 @@ def obtain_products():
 
     products = instance.collection('productos').get()
     my_dict = {el.id: el.to_dict() for el in products}
-   # print(my_dict)
+    # print(my_dict)
 
     return my_dict
