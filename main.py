@@ -1,14 +1,54 @@
-import pandas as pd
-
-from connection.EjemploIris import ejemplo_iris
 from connection.Firebase import *
+from model.Product import ProductItem
+import matplotlib.pyplot as plt
 
 
 def init():
     products = obtain_products()
-    print(products.values())
+    # print(products.values())
 
-# ejemplo_iris()
+    product_dict_list = list(products.values())
+    print(product_dict_list)
+    product_model_list = []
+
+    for item in product_dict_list:
+        # print(item.get("nombre"))
+        # print(type(item))
+        product_model_list.append(ProductItem(item.get("nombre"), item.get("stock"), item.get("tienda")))
+
+    show_graphs(product_model_list)
+
+# ejemplo_iris():
+
+
+def show_graphs(product_model_list):
+    x = []
+    y = []
+
+    for item in product_model_list:
+        print(f'name: {item.name}')
+        print(f'stock: {item.stock}')
+        print(f'shop: {item.shop}')
+        print("---------------")
+        x.append(item.shop)
+        y.append(item.stock)
+
+    # plotting the points
+    # labels for bars
+    tick_label = ['one', 'two', 'three', 'four', 'five']
+
+    # plotting a bar chart
+    plt.bar(x, y)
+
+    # naming the x-axis
+    plt.xlabel('localización')
+    # naming the y-axis
+    plt.ylabel('y - stock')
+    # plot title
+    plt.title('Comparativa Stock - Localización')
+
+    # function to show the plot
+    plt.show()
 
 
 if __name__ == '__main__':

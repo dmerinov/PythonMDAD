@@ -5,9 +5,9 @@ from firebase_admin import firestore
 
 def connect():
     # Torre
-    # credential = credentials.Certificate("C:\\Users\\wotan\\Desktop\\PythonMDAD\\connection\\firestoreKey.json")
+    credential = credentials.Certificate("C:\\Users\\wotan\\Desktop\\PythonMDAD\\connection\\firestoreKey.json")
     # Portatil
-    credential = credentials.Certificate("C:\\Users\\dmerinov-lt\\Documents\\PythonMDAD\\connection\\firestoreKey.json")
+    #credential = credentials.Certificate("C:\\Users\\dmerinov-lt\\Documents\\PythonMDAD\\connection\\firestoreKey.json")
 
     firebase_admin.initialize_app(credential)
 
