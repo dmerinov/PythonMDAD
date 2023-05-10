@@ -19,6 +19,9 @@ def connect():
 
 
 def obtain_products():
+
+    filepath_torre = 'C:\\Users\\wotan\\Desktop\\PythonMDAD\\csvOutput\\file.csv'
+
     FIELDS = ['nombre', 'stock', 'tienda', 'precio']
     instance = connect()
     writer = csv_writer(open('C:\\Users\\wotan\\Desktop\\PythonMDAD\\csvOutput\\file.csv', 'w'), FIELDS)
