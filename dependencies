@@ -4,3 +4,4 @@ pip install -U scikit-learn
 pip install graphviz
 pip install ipython
 pip install matplotlib
+pip install csv2arff   csv2arff csvOutput/file.csv csvOutput/file.arff
