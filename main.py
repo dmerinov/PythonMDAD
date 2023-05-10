@@ -19,7 +19,7 @@ def init():
         # print(item.get("nombre"))
         # print(type(item))
         product_model_list.append(
-            ProductItem(item.get("nombre"), item.get("stock"), item.get("tienda"), item.get("precio")))
+            ProductItem(item.get("nombre"), item.get("stock"), item.get("tienda"), item.get("precio"), item.get("category"), item.get("times_purchased")))
 
     # stock_location_graph(product_model_list)
     # price_location_graph(product_model_list)
