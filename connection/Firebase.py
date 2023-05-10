@@ -8,9 +8,9 @@ from firebase_admin import firestore
 
 def connect():
     # Torre
-    credential = credentials.Certificate("C:\\Users\\wotan\\Desktop\\PythonMDAD\\connection\\firestoreKey.json")
+    #credential = credentials.Certificate("C:\\Users\\dmerinov-lt\\PycharmProjects\\PythonMDAD\\connection\\firestoreKey.json")
     # Portatil
-    # credential = credentials.Certificate("C:\\Users\\dmerinov-lt\\Documents\\PythonMDAD\\connection\\firestoreKey.json")
+    credential = credentials.Certificate('connection/firestoreKey.json')
 
     firebase_admin.initialize_app(credential)
 
@@ -20,11 +20,12 @@ def connect():
 
 def obtain_products():
 
-    filepath_torre = 'C:\\Users\\wotan\\Desktop\\PythonMDAD\\csvOutput\\file.csv'
+    #filepath_torre = 'C:\\Users\\wotan\\Desktop\\PythonMDAD\\csvOutput\\file.csv'
+    filepath_portatil = 'csvOutput/filePortatil.csv'
 
     FIELDS = ['nombre', 'stock', 'tienda', 'precio']
     instance = connect()
-    writer = csv_writer(open('C:\\Users\\wotan\\Desktop\\PythonMDAD\\csvOutput\\file.csv', 'w'), FIELDS)
+    writer = csv_writer(open(filepath_portatil, 'w'), FIELDS)
     # writer = csv_writer(sys.stdout, FIELDS)
     writer.writeheader()
 
