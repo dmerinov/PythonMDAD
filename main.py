@@ -19,11 +19,12 @@ def init():
         # print(item.get("nombre"))
         # print(type(item))
         product_model_list.append(
-            ProductItem(item.get("nombre"), item.get("stock"), item.get("tienda"), item.get("precio"), item.get("category"), item.get("times_purchased")))
+            ProductItem(item.get("nombre"), item.get("stock"), item.get("tienda"), item.get("precio"),
+                        item.get("category"), item.get("veces_comprado")))
 
-    # stock_location_graph(product_model_list)
-    # price_location_graph(product_model_list)
-    stock_price_location_graph(product_model_list)
+    stock_location_graph(product_model_list)
+    price_location_graph(product_model_list)
+    # stock_price_location_graph(product_model_list)
 
 
 # ejemplo_iris():
@@ -38,6 +39,8 @@ def stock_price_location_graph(product_model_list):
         print(f'stock: {item.stock}')
         print(f'shop: {item.shop}')
         print(f'precio: {item.price}')
+        print(f'veces comprado: {item.times_purchased}')
+        print(f'categoria: {item.category}')
         print("---------------")
         shop.append(item.shop)
         price.append(item.price)
@@ -67,6 +70,8 @@ def price_location_graph(product_model_list):
         print(f'stock: {item.stock}')
         print(f'shop: {item.shop}')
         print(f'precio: {item.price}')
+        print(f'veces comprado: {item.times_purchased}')
+        print(f'categoria: {item.category}')
         print("---------------")
         x.append(item.shop)
         y.append(item.price)

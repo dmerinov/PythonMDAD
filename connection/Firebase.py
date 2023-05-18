@@ -23,7 +23,7 @@ def obtain_products():
     #filepath_torre = 'C:\\Users\\wotan\\Desktop\\PythonMDAD\\csvOutput\\file.csv'
     filepath_portatil = 'csvOutput/filePortatil.csv'
 
-    FIELDS = ['nombre', 'stock', 'tienda', 'precio']
+    FIELDS = ['nombre', 'stock', 'tienda', 'precio','veces_comprado']
     instance = connect()
     writer = csv_writer(open(filepath_portatil, 'w'), FIELDS)
     # writer = csv_writer(sys.stdout, FIELDS)
